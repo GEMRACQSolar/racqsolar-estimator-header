@@ -4,8 +4,13 @@
   "description": "RACQ Solar Estimator Header Component for WeWeb",
   "main": "src/wwElement.vue",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "weweb build",
+    "serve": "weweb serve"
   },
+  "author": "RACQ Solar",
+  "license": "Private",
+  "type": "ww-element",
+  "wewebPublic": "public",
   "keywords": [
     "weweb",
     "component",
@@ -13,6 +18,8 @@
     "solar",
     "header"
   ],
-  "author": "RACQ Solar",
-  "license": "ISC"
+  "dependencies": {},
+  "devDependencies": {
+    "@weweb/cli": "latest"
+  }
 }
