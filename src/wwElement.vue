@@ -199,11 +199,14 @@ export default {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 1;
+  min-width: 0; /* Allow flex item to shrink */
 }
 
 .header-logo {
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
 }
 
 .header-title {
@@ -211,6 +214,9 @@ export default {
   font-weight: 600;
   color: #FFFFFF;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Right section */
@@ -218,6 +224,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 /* Clear button */
@@ -360,19 +367,74 @@ export default {
     width: 32px;
     height: 32px;
   }
+  
+  .header-left {
+    gap: 0.75rem;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .header-title {
-    display: none;
+    font-size: 1rem;
   }
   
   .clear-button {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
   
   .button-text {
     display: none;
+  }
+  
+  .user-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.625rem 0.75rem;
+  }
+  
+  .header-title {
+    font-size: 0.875rem;
+    /* Keep the title visible but smaller */
+  }
+  
+  .header-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .header-left {
+    gap: 0.5rem;
+  }
+  
+  .header-right {
+    gap: 0.5rem;
+  }
+  
+  .clear-button {
+    padding: 0.375rem 0.5rem;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Very small screens - use flexible text sizing */
+@media (max-width: 380px) {
+  .header-title {
+    font-size: 0.75rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .header-container {
+    padding: 0.5rem;
   }
 }
 </style>
