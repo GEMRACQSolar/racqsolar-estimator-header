@@ -38,30 +38,31 @@ export default {
   },
   
   // Event configuration for WeWeb workflows
-  events: [
+  triggerEvents: [
     {
       name: "clear:estimator",
-      label: "On Clear Estimator",
-      eventSchema: {
-        timestamp: { type: "string", label: "Timestamp" },
-        userName: { type: "string", label: "User Name" }
-      }
+      label: { en: "On Clear Estimator" },
+      event: {
+        timestamp: "",
+        userName: ""
+      },
+      default: true
     },
     {
       name: "navigate:profile",
-      label: "On Navigate to Profile",
-      eventSchema: {
-        timestamp: { type: "string", label: "Timestamp" },
-        userName: { type: "string", label: "User Name" },
-        userEmail: { type: "string", label: "User Email" }
+      label: { en: "On Navigate to Profile" },
+      event: {
+        timestamp: "",
+        userName: "",
+        userEmail: ""
       }
     },
     {
       name: "user:logout",
-      label: "On User Logout",
-      eventSchema: {
-        timestamp: { type: "string", label: "Timestamp" },
-        userName: { type: "string", label: "User Name" }
+      label: { en: "On User Logout" },
+      event: {
+        timestamp: "",
+        userName: ""
       }
     }
   ]
