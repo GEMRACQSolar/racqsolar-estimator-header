@@ -33,11 +33,7 @@
           type="button"
           title="Help Guide"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-            <line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
+          <span class="help-icon">?</span>
         </button>
 
         <!-- User menu -->
@@ -274,23 +270,29 @@ export default {
 
 /* Help button */
 .help-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
   background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .help-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+}
+
+.help-icon {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
 /* User menu */
@@ -432,8 +434,8 @@ export default {
   }
   
   .help-button {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
   
   .user-avatar {
@@ -471,8 +473,9 @@ export default {
   }
   
   .help-button {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
   }
   
   .user-avatar {
