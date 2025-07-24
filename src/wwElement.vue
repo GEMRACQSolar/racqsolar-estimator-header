@@ -26,6 +26,20 @@
           <span class="button-text">Clear Estimator</span>
         </button>
 
+        <!-- Help button -->
+        <button 
+          class="help-button"
+          @click="handleShowHelp"
+          type="button"
+          title="Help Guide"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </button>
+
         <!-- User menu -->
         <div class="user-menu">
           <button 
@@ -127,6 +141,16 @@ export default {
         payload: {
           timestamp: new Date().toISOString(),
           userName: this.userName
+        }
+      })
+    },
+    
+    handleShowHelp() {
+      // Emit event to show help guide
+      this.$emit('trigger-event', {
+        name: 'show:help-guide',
+        payload: {
+          timestamp: new Date().toISOString()
         }
       })
     },
@@ -246,6 +270,27 @@ export default {
 .clear-button:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Help button */
+.help-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 /* User menu */
@@ -386,6 +431,11 @@ export default {
     display: none;
   }
   
+  .help-button {
+    width: 36px;
+    height: 36px;
+  }
+  
   .user-avatar {
     width: 36px;
     height: 36px;
@@ -418,6 +468,11 @@ export default {
   
   .clear-button {
     padding: 0.375rem 0.5rem;
+  }
+  
+  .help-button {
+    width: 32px;
+    height: 32px;
   }
   
   .user-avatar {
