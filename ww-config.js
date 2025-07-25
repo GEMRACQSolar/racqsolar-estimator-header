@@ -64,6 +64,14 @@ export default {
         timestamp: "",
         userName: ""
       }
+    },
+    {
+      name: "toggle:help",
+      label: { en: "On Toggle Help" },
+      event: {
+        timestamp: ""
+      },
+      default: true
     }
   ]
 }
