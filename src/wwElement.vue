@@ -29,11 +29,15 @@
         <!-- Help button -->
         <button 
           class="help-button"
-          @click="handleShowHelp"
+          @click="handleToggleHelp"
           type="button"
           title="Help Guide"
         >
-          <span class="help-icon">?</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M7.5 7.5C7.5 6.11929 8.61929 5 10 5C11.3807 5 12.5 6.11929 12.5 7.5C12.5 8.88071 11.3807 10 10 10V11.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="10" cy="14.5" r="0.75" fill="currentColor"/>
+          </svg>
         </button>
 
         <!-- User menu -->
@@ -141,10 +145,10 @@ export default {
       })
     },
     
-    handleShowHelp() {
-      // Emit event to show help guide
+    handleToggleHelp() {
+      // Emit event for WeWeb workflow
       this.$emit('trigger-event', {
-        name: 'show:help-guide',
+        name: 'toggle:help',
         payload: {
           timestamp: new Date().toISOString()
         }
@@ -270,29 +274,21 @@ export default {
 
 /* Help button */
 .help-button {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
+  background: transparent;
+  border: none;
+  color: #FFE600;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
 }
 
 .help-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.help-icon {
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1;
+  background: rgba(255, 230, 0, 0.1);
+  transform: scale(1.05);
 }
 
 /* User menu */
@@ -434,8 +430,12 @@ export default {
   }
   
   .help-button {
-    width: 28px;
-    height: 28px;
+    padding: 6px;
+  }
+  
+  .help-button svg {
+    width: 18px;
+    height: 18px;
   }
   
   .user-avatar {
@@ -473,9 +473,12 @@ export default {
   }
   
   .help-button {
-    width: 28px;
-    height: 28px;
-    font-size: 0.875rem;
+    padding: 4px;
+  }
+  
+  .help-button svg {
+    width: 16px;
+    height: 16px;
   }
   
   .user-avatar {
